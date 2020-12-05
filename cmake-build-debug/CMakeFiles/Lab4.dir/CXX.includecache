@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/rgalvan/Documents/austincc/Data Struct and Algo/code/Lab4/Queue.h
+memory
+-
+
+/Users/rgalvan/Documents/austincc/Data Struct and Algo/code/Lab4/main.cpp
+iostream
+-
+Queue.h
+/Users/rgalvan/Documents/austincc/Data Struct and Algo/code/Lab4/Queue.h
+
