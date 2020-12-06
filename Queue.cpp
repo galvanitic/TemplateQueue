@@ -90,8 +90,9 @@ bool Queue<T>::isFull() const
 //**********************************************
 template<class T>
 void Queue<T>::display() const {
+	cout << endl;
   if (!isEmpty()){
-    for (int i = 0; i <= queueSize; i++){
+    for (int i = 0; i < queueSize; i++){
       cout << " * " << queueArray[i] << endl;
     }
   }else{
@@ -109,5 +110,26 @@ void Queue<T>::clear()
    front = -1;
    rear = -1;
    numItems = 0;
+}
+
+void TempQueue(){
+	Queue<int> aTempIntQueue(1);
+	Queue<float> aTempFloatQueue(1);
+	Queue<string> aTempStrQueue(1);
+	
+	aTempIntQueue.enqueue(1);
+	aTempFloatQueue.enqueue(1.0);
+	aTempStrQueue.enqueue("1");
+	
+	int intVal;
+	float floatVal;
+	string strVal;
+	aTempIntQueue.dequeue(intVal);
+	aTempFloatQueue.dequeue(floatVal);
+	aTempStrQueue.dequeue(strVal);
+	
+	aTempIntQueue.display();
+	aTempFloatQueue.display();
+	aTempStrQueue.display();
 }
 

@@ -29,7 +29,7 @@ int main(int argc, char** argv){
     || dataType == '2'
     || dataType == '3'){
       isDataTypeValid=true;
-      cout << endl;
+      cout << "*** DATA TYPE IS VALID & IT'S NUM " << dataType << endl;
     }else{
       cout << ">> That was not a valid option. Please try again." << endl;
       dataTypes();
@@ -43,53 +43,65 @@ int main(int argc, char** argv){
     cin  >> choice;
     if (choice == '1'){ // test enqueue
       string prompt = "   >> What do you want to enqueue? ";
-      switch (dataType) {
-        case '1': // if int
-          int intToQueue;
-          cout << prompt;
-          cin >> intToQueue;
-          cout << endl;
-          intQueue.enqueue(intToQueue);
-        case '2': // if float
+      if(dataType == '1'){
+      	// if int
+	      int intToQueue;
+	      cout << prompt;
+	      cin >> intToQueue;
+	      cout << endl;
+	      intQueue.enqueue(intToQueue);
+	  } else if(dataType == '2'){
+	  	// if float
           float floatToQueue;
           cout << prompt;
           cin >> floatToQueue;
           cout << endl;
           floatQueue.enqueue(floatToQueue);
-        case '3': // if string
+	  } else if(dataType == '3'){
+	  	// if string
           string strToQueue;
           cout << prompt;
           cin >> strToQueue;
           cout << endl;
           strQueue.enqueue(strToQueue);
-      }
+	  }else {
+	  	cout << "Something went wrong.\n";
+	  }
     }
     else if (choice == '2'){ // test dequeue
       string outTxt = " was removed from the queue!\n";
-      switch (dataType) {
-        case '1': // if int
+      if(dataType == '1'){
+      	// if int
           int intItem;
           intQueue.dequeue(intItem);
           cout << "   >> " << intItem << outTxt;
-        case '2': // if float
+	  } else if(dataType == '2'){
+	  	// if float
           float floatItem;
           floatQueue.dequeue(floatItem);
           cout << "   >> " << floatItem << outTxt;
-        case '3': // if string
+	  } else if(dataType == '3'){
+	  	// if string
           string strItem;
           strQueue.dequeue(strItem);
           cout << "   >> " << strItem << outTxt;
-      }
+	  }else {
+	  	cout << "Something went wrong.\n";
+	  }
     }
     else if (choice == '3'){ // display the items in the queue
-      switch (dataType) {
-        case '1': // if int
+		if(dataType == '1'){
+      	// if int
           intQueue.display();
-        case '2': // if float
+	  } else if(dataType == '2'){
+	  	// if float
           floatQueue.display();
-        case '3': // if string
+	  } else if(dataType == '3'){
+	  	// if string
           strQueue.display();
-      }
+	  }else {
+	  	cout << "Something went wrong.\n";
+	  }
     }
     else if (choice == '4'){
       cout << endl << "Exiting..." << endl << endl;
@@ -106,7 +118,7 @@ void menu(){
        << "   * 1 - Put an item in the queue\n"
        << "   * 2 - Remove an item from the queue\n"
        << "   * 3 - Display the items in the queue\n"
-       << "   * 4 - Exit"
+       << "   * 4 - Exit\n"
        << " > ";
 }
 

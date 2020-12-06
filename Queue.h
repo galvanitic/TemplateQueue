@@ -1,3 +1,6 @@
+#ifndef QUEUE_H
+#define QUEUE_H
+
 #include <memory>
 using namespace std;
 
@@ -20,3 +23,4 @@ public:
    void clear();
 };
 
+#endif
